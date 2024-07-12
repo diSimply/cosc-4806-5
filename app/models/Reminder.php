@@ -42,6 +42,22 @@ class Reminder{
     $statement->bindValue(':id', $id);
     $statement->execute();
   } 
+
+  public function get_all_reminders(){
+    $db = db_connect();
+    $statement = $db->prepare("select reminders.id, reminders.subject, reminders.created_at, users.username username from reminders join users on reminders.user_id = users.id;");
+    $statement->execute();
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
+
+  public function get_user_with_most_reminders(){
+    $db = db_connect();
+    $statement = $db->prepare("select users.username, count(reminders.id) as total from reminders join users on reminders.user_id = users.id group by users.username order by total desc limit 1;");
+    $statement->execute();
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+    return $row;
+  }
 }
 
 
