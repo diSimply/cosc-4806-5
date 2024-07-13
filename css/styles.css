@@ -23,3 +23,10 @@
 .page {
   padding-top: 3rem;
 }
+
+
+.login-toast {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+}

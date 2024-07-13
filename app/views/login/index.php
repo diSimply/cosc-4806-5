@@ -47,5 +47,18 @@ if(isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] >= 3) {
 				</div>
 		</div>
 	</div>
+	</main>
+	<!-- when there is an error, display a toast with the error message -->
+	<?php if(isset($_SESSION['failedAuth'])): ?>
+		<div class="toast show login-toast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header bg-danger text-light">
+				<strong class="me-auto">Login Failed</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body">
+				Incorrect username or password
+			</div>
+		</div>
+	<?php endif; ?>
 	<?php require_once 'app/views/templates/footer.php' ?>
 <?php endif; ?>
