@@ -1,5 +1,5 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
+<div class="container page">
   <div class="mt-3 p-3 row border">
     <h2>Create Reminder</h2>
     <div class="col-sm-auto">

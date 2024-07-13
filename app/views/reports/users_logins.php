@@ -1,6 +1,6 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
-  <h1>Users Good / Bad Login Attempts</h1>
+<div class="container page">
+  <h2>Report: Users Good / Bad Login Attempts</h2>
   <table class="table">
     <thead>
       <tr>

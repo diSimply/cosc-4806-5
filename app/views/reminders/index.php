@@ -1,16 +1,18 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
+<div class="container page">
   <div class="page-header mt-3" id="banner">
     <div class="row">
       <div class="col-9">
-         <h1>Reminders</h1>
+         <h2>Reminders</h2>
       </div>
       <div class="col-3">
         <a href="/reminders/display_create_form" class="btn btn-primary">Create Reminder</a>
       </div>
     </div>
   </div>
-  <table class="table">
+  <!-- Display table when there is at least 1 reminder  -->
+  <?php if (count($data['reminders']) > 0): ?>
+    <table class="table">
     <thead>
       <tr>
         <th scope="col">Subject</th>
@@ -31,6 +33,11 @@
       <?php endforeach; ?>
     </tbody>
   </table>
+  <?php else: ?>
+    <div class="alert alert-info">
+      You do not have any reminders yet. Get started by creating one.
+    </div>
+  <?php endif; ?>
   <!-- Data rows  -->
   <?php require_once 'app/views/templates/footer.php' ?>
 </div>

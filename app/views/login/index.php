@@ -17,7 +17,7 @@ if(isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] >= 3) {
 		<p>Please wait at least <?php echo $waitTime; ?> seconds and then refresh.</p>
 	</div>
 <?php else:  ?>
-	<main role="main" class="container">
+	<main role="main" class="container page">
 	    <div class="page-header" id="banner">
 	        <div class="row">
 	            <div class="col-lg-12">

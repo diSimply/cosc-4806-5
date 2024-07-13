@@ -1,5 +1,5 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
+<div class="container page">
   <div class="mt-3 p-3 row">
     <div class="col-3"></div>
     <div class="col-6 alert alert-danger d-flex justify-content-center" role="alert">

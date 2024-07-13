@@ -1,5 +1,6 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
+<div class="container page">
+  <h2>Report: Users Reminders</h2>
   <!-- Who has the most reminders  -->
   <?php if (isset($data['user_most_reminders'])) {
     echo "<p>The user with the most reminders is <strong>" . $data['user_most_reminders']['username'] . "</strong> with <strong>" . $data['user_most_reminders']['total']. "</strong> reminders</p>";
