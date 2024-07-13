@@ -29,6 +29,20 @@ if (!isset($_SESSION['auth'])) {
         <li class="nav-item">
           <a class="nav-link" href="/reminders">Reminders</a>
         </li>
+        <?php if ($_SESSION["username"] == "admin"):?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Reports
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/reports">Reminders Report</a></li>
+              <li><a class="dropdown-item" href="/reports/login_attempts_reports">Login Attempts Report</a></li>
+            </ul>
+          </li>
+        <?php endif; ?>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
