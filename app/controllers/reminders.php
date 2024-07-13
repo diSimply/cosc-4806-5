@@ -46,6 +46,14 @@ class Reminders extends Controller {
     header('Location: /reminders');
   }
 
+
+  public function weekdays() {
+    $reminder = $this->model('Reminder');
+    $data = $reminder->weekdays();
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($data, JSON_NUMERIC_CHECK);
+  }
+
 }
 
 ?>

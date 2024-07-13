@@ -58,6 +58,25 @@ class Reminder{
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     return $row;
   }
+
+
+  public function weekdays() {
+    $db = db_connect();
+    $statement = $db->prepare("
+      SELECT 
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 2 THEN 1 ELSE 0 END) as monday,
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 3 THEN 1 ELSE 0 END) as tuesday,
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 4 THEN 1 ELSE 0 END) as wednesday,
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 5 THEN 1 ELSE 0 END) as thursday,
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 6 THEN 1 ELSE 0 END) as friday,
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 7 THEN 1 ELSE 0 END) as saturday,
+          SUM(CASE WHEN DAYOFWEEK(reminders.created_at) = 1 THEN 1 ELSE 0 END) as sunday
+      FROM reminders;
+    ");
+    $statement->execute();
+    $row = $statement->fetch(PDO::FETCH_ASSOC);
+     return $row;
+  }
 }
 
 
